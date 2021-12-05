@@ -1,0 +1,3 @@
+SilverStripe\Headless\GraphQL\ModelLoader:
+    included_dataobjects:
+        - 'App\*'
