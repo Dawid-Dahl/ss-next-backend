@@ -1,0 +1,3 @@
+App\Models\BlockPage:
+    extensions:
+        - DNADesign\Elemental\Extensions\ElementalPageExtension

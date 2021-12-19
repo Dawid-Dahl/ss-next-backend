@@ -26,6 +26,12 @@ class ParentClassEnum extends EnumType
                         'SminneeApiKeyMemberApiKey' => [
                     'value' => 'Sminnee\\ApiKey\\MemberApiKey',
                                 ],
+                        'DNADesignElementalModelsBaseElement' => [
+                    'value' => 'DNADesign\\Elemental\\Models\\BaseElement',
+                                ],
+                        'DNADesignElementalModelsElementalArea' => [
+                    'value' => 'DNADesign\\Elemental\\Models\\ElementalArea',
+                                ],
                         'SilverStripeAssetsShortcodesFileLink' => [
                     'value' => 'SilverStripe\\Assets\\Shortcodes\\FileLink',
                                 ],
@@ -89,8 +95,17 @@ class ParentClassEnum extends EnumType
                         'SilverStripeAssetsImage' => [
                     'value' => 'SilverStripe\\Assets\\Image',
                                 ],
+                        'DNADesignElementalModelsElementContent' => [
+                    'value' => 'DNADesign\\Elemental\\Models\\ElementContent',
+                                ],
                         'Page' => [
                     'value' => 'Page',
+                                ],
+                        'AppModelsBlockPage' => [
+                    'value' => 'App\\Models\\BlockPage',
+                                ],
+                        'AppModelsContentPage' => [
+                    'value' => 'App\\Models\\ContentPage',
                                 ],
                         'SilverStripeErrorPageErrorPage' => [
                     'value' => 'SilverStripe\\ErrorPage\\ErrorPage',

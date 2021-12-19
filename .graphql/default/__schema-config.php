@@ -169,15 +169,24 @@ return array (
   array (
     'SiteTree' => 'SiteTree',
     'Page' => 'Page',
+    'BlockPage' => 'BlockPage',
+    'ContentPage' => 'ContentPage',
+    'BaseElement' => 'BaseElement',
+    'ElementContent' => 'ElementContent',
     'File' => 'File',
     'Folder' => 'Folder',
     'Image' => 'Image',
   ),
   'typeMapping' => 
   array (
-    'Page' => 'Page',
+    'App\\Models\\BlockPage' => 'BlockPage',
     'SilverStripe\\CMS\\Model\\SiteTree' => 'SiteTree',
+    'DNADesign\\Elemental\\Models\\ElementalArea' => 'ElementalArea',
     'SilverStripe\\Security\\Group' => 'Group',
+    'Page' => 'Page',
+    'App\\Models\\ContentPage' => 'ContentPage',
+    'DNADesign\\Elemental\\Models\\BaseElement' => 'BaseElement',
+    'DNADesign\\Elemental\\Models\\ElementContent' => 'ElementContent',
     'SilverStripe\\Assets\\File' => 'File',
     'SilverStripe\\Security\\Member' => 'Member',
     'SilverStripe\\Assets\\Shortcodes\\FileLink' => 'FileLink',
@@ -187,112 +196,122 @@ return array (
   ),
   'fieldMapping' => 
   array (
-    'Page' => 
+    'BlockPage' => 
     array (
       'id' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'ID',
       ),
       'hashID' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'hashID',
       ),
       'typeAncestry' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'typeAncestry',
       ),
       'exists' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'exists',
       ),
       'className' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'ClassName',
       ),
       'lastEdited' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'LastEdited',
       ),
       'created' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'Created',
       ),
       'canViewType' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'CanViewType',
       ),
       'canEditType' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'CanEditType',
       ),
       'version' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'Version',
       ),
       'urlSegment' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'URLSegment',
       ),
       'title' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'Title',
       ),
       'menuTitle' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'MenuTitle',
       ),
       'content' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'Content',
       ),
       'metaDescription' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'MetaDescription',
       ),
       'extraMeta' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'ExtraMeta',
       ),
       'showInMenus' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'ShowInMenus',
       ),
       'showInSearch' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'ShowInSearch',
       ),
       'sort' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'Sort',
       ),
       'parentID' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'ParentID',
+      ),
+      'elementalAreaID' => 
+      array (
+        0 => 'BlockPage',
+        1 => 'ElementalAreaID',
       ),
       'parent' => 
       array (
         0 => 'SiteTree',
         1 => 'Parent',
+      ),
+      'elementalArea' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'ElementalArea',
       ),
       'viewerGroups' => 
       array (
@@ -306,7 +325,7 @@ return array (
       ),
       'breadcrumbs' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'NavigationPath',
       ),
       'children' => 
@@ -316,17 +335,17 @@ return array (
       ),
       'navChildren' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'Children',
       ),
       'navParent' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'Parent',
       ),
       'link' => 
       array (
-        0 => 'Page',
+        0 => 'BlockPage',
         1 => 'link',
       ),
     ),
@@ -473,6 +492,59 @@ return array (
         1 => 'link',
       ),
     ),
+    'ElementalArea' => 
+    array (
+      'id' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'ID',
+      ),
+      'hashID' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'hashID',
+      ),
+      'typeAncestry' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'typeAncestry',
+      ),
+      'exists' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'exists',
+      ),
+      'className' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'ClassName',
+      ),
+      'lastEdited' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'LastEdited',
+      ),
+      'created' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'Created',
+      ),
+      'version' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'Version',
+      ),
+      'ownerClassName' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'OwnerClassName',
+      ),
+      'elements' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'Elements',
+      ),
+    ),
     'Group' => 
     array (
       'id' => 
@@ -494,6 +566,468 @@ return array (
       array (
         0 => 'Group',
         1 => 'exists',
+      ),
+    ),
+    'Page' => 
+    array (
+      'id' => 
+      array (
+        0 => 'Page',
+        1 => 'ID',
+      ),
+      'hashID' => 
+      array (
+        0 => 'Page',
+        1 => 'hashID',
+      ),
+      'typeAncestry' => 
+      array (
+        0 => 'Page',
+        1 => 'typeAncestry',
+      ),
+      'exists' => 
+      array (
+        0 => 'Page',
+        1 => 'exists',
+      ),
+      'className' => 
+      array (
+        0 => 'Page',
+        1 => 'ClassName',
+      ),
+      'lastEdited' => 
+      array (
+        0 => 'Page',
+        1 => 'LastEdited',
+      ),
+      'created' => 
+      array (
+        0 => 'Page',
+        1 => 'Created',
+      ),
+      'canViewType' => 
+      array (
+        0 => 'Page',
+        1 => 'CanViewType',
+      ),
+      'canEditType' => 
+      array (
+        0 => 'Page',
+        1 => 'CanEditType',
+      ),
+      'version' => 
+      array (
+        0 => 'Page',
+        1 => 'Version',
+      ),
+      'urlSegment' => 
+      array (
+        0 => 'Page',
+        1 => 'URLSegment',
+      ),
+      'title' => 
+      array (
+        0 => 'Page',
+        1 => 'Title',
+      ),
+      'menuTitle' => 
+      array (
+        0 => 'Page',
+        1 => 'MenuTitle',
+      ),
+      'content' => 
+      array (
+        0 => 'Page',
+        1 => 'Content',
+      ),
+      'metaDescription' => 
+      array (
+        0 => 'Page',
+        1 => 'MetaDescription',
+      ),
+      'extraMeta' => 
+      array (
+        0 => 'Page',
+        1 => 'ExtraMeta',
+      ),
+      'showInMenus' => 
+      array (
+        0 => 'Page',
+        1 => 'ShowInMenus',
+      ),
+      'showInSearch' => 
+      array (
+        0 => 'Page',
+        1 => 'ShowInSearch',
+      ),
+      'sort' => 
+      array (
+        0 => 'Page',
+        1 => 'Sort',
+      ),
+      'parentID' => 
+      array (
+        0 => 'Page',
+        1 => 'ParentID',
+      ),
+      'parent' => 
+      array (
+        0 => 'SiteTree',
+        1 => 'Parent',
+      ),
+      'viewerGroups' => 
+      array (
+        0 => 'Group',
+        1 => 'ViewerGroups',
+      ),
+      'editorGroups' => 
+      array (
+        0 => 'Group',
+        1 => 'EditorGroups',
+      ),
+      'breadcrumbs' => 
+      array (
+        0 => 'Page',
+        1 => 'NavigationPath',
+      ),
+      'children' => 
+      array (
+        0 => 'Page',
+        1 => 'children',
+      ),
+      'navChildren' => 
+      array (
+        0 => 'Page',
+        1 => 'Children',
+      ),
+      'navParent' => 
+      array (
+        0 => 'Page',
+        1 => 'Parent',
+      ),
+      'link' => 
+      array (
+        0 => 'Page',
+        1 => 'link',
+      ),
+    ),
+    'ContentPage' => 
+    array (
+      'id' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'ID',
+      ),
+      'hashID' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'hashID',
+      ),
+      'typeAncestry' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'typeAncestry',
+      ),
+      'exists' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'exists',
+      ),
+      'className' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'ClassName',
+      ),
+      'lastEdited' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'LastEdited',
+      ),
+      'created' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'Created',
+      ),
+      'canViewType' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'CanViewType',
+      ),
+      'canEditType' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'CanEditType',
+      ),
+      'version' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'Version',
+      ),
+      'urlSegment' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'URLSegment',
+      ),
+      'title' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'Title',
+      ),
+      'menuTitle' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'MenuTitle',
+      ),
+      'content' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'Content',
+      ),
+      'metaDescription' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'MetaDescription',
+      ),
+      'extraMeta' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'ExtraMeta',
+      ),
+      'showInMenus' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'ShowInMenus',
+      ),
+      'showInSearch' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'ShowInSearch',
+      ),
+      'sort' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'Sort',
+      ),
+      'parentID' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'ParentID',
+      ),
+      'tagline' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'tagline',
+      ),
+      'parent' => 
+      array (
+        0 => 'SiteTree',
+        1 => 'Parent',
+      ),
+      'viewerGroups' => 
+      array (
+        0 => 'Group',
+        1 => 'ViewerGroups',
+      ),
+      'editorGroups' => 
+      array (
+        0 => 'Group',
+        1 => 'EditorGroups',
+      ),
+      'breadcrumbs' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'NavigationPath',
+      ),
+      'children' => 
+      array (
+        0 => 'Page',
+        1 => 'children',
+      ),
+      'navChildren' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'Children',
+      ),
+      'navParent' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'Parent',
+      ),
+      'link' => 
+      array (
+        0 => 'ContentPage',
+        1 => 'link',
+      ),
+    ),
+    'BaseElement' => 
+    array (
+      'id' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'ID',
+      ),
+      'hashID' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'hashID',
+      ),
+      'typeAncestry' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'typeAncestry',
+      ),
+      'exists' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'exists',
+      ),
+      'className' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'ClassName',
+      ),
+      'lastEdited' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'LastEdited',
+      ),
+      'created' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'Created',
+      ),
+      'version' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'Version',
+      ),
+      'title' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'Title',
+      ),
+      'showTitle' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'ShowTitle',
+      ),
+      'sort' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'Sort',
+      ),
+      'extraClass' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'ExtraClass',
+      ),
+      'style' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'Style',
+      ),
+      'parentID' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'ParentID',
+      ),
+      'parent' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'Parent',
+      ),
+      'link' => 
+      array (
+        0 => 'BaseElement',
+        1 => 'link',
+      ),
+    ),
+    'ElementContent' => 
+    array (
+      'id' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'ID',
+      ),
+      'hashID' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'hashID',
+      ),
+      'typeAncestry' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'typeAncestry',
+      ),
+      'exists' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'exists',
+      ),
+      'className' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'ClassName',
+      ),
+      'lastEdited' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'LastEdited',
+      ),
+      'created' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'Created',
+      ),
+      'version' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'Version',
+      ),
+      'title' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'Title',
+      ),
+      'showTitle' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'ShowTitle',
+      ),
+      'sort' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'Sort',
+      ),
+      'extraClass' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'ExtraClass',
+      ),
+      'style' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'Style',
+      ),
+      'parentID' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'ParentID',
+      ),
+      'html' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'HTML',
+      ),
+      'parent' => 
+      array (
+        0 => 'ElementalArea',
+        1 => 'Parent',
+      ),
+      'link' => 
+      array (
+        0 => 'ElementContent',
+        1 => 'link',
       ),
     ),
     'File' => 
